@@ -22,6 +22,9 @@
 	font-weight: 600;
 	font-size: 14px;
 }
+.social-text:hover{
+	color: var(--link-color);
+}
 
 .email::before {
 	content: "";

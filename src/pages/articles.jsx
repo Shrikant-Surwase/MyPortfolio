@@ -5,7 +5,7 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Article from "../components/articles/article";
-
+import Typed from "typed.js";
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
@@ -15,6 +15,18 @@ import "./styles/articles.css";
 const Articles = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		var options = {
+			strings: ['<i>I am passionate about pushing the boundaries of what is possible and inspiring the next generation of innovators.</i>'],
+			typeSpeed: 40,
+			
+			
+		  };
+		  
+		  var typed = new Typed('.element', options);
+		  return ()=>{
+             typed.destroy();
+		  }
+
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "articles");
@@ -41,10 +53,11 @@ const Articles = () => {
 
 					<div className="articles-main-container">
 						<div className="title articles-title">
-							{INFO.articles.title}
+							
+							<span className="element"></span>
 						</div>
 
-						<div className="subtitle articles-subtitle">
+						<div className="subtitle articles-subtitle demo">
 							{INFO.articles.description}
 						</div>
 

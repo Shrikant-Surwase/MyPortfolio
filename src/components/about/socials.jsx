@@ -1,11 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMailBulk, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import {
 	faTwitter,
 	faGithub,
 	faLinkedin,
 	faInstagram,
+	faStackOverflow
 } from "@fortawesome/free-brands-svg-icons";
 
 import INFO from "../../data/user";
@@ -16,14 +18,14 @@ const Socials = () => {
 	return (
 		<div className="socials">
 			<div className="social">
-				<a href={INFO.socials.twitter} target="_blank" rel="noreferrer">
+				<a href={INFO.socials.stackoverflow} target="_blank" rel="noreferrer">
 					<div className="social-icon">
 						<FontAwesomeIcon
-							icon={faTwitter}
+							icon={faStackOverflow}
 							className="social-icon"
 						/>
 					</div>
-					<div className="social-text">Follow on Twitter</div>
+					<div className="social-text">Follow on StackOverFlow</div>
 				</a>
 			</div>
 
@@ -57,17 +59,17 @@ const Socials = () => {
 
 			<div className="social">
 				<a
-					href={INFO.socials.instagram}
+					href={INFO.socials.leetcode}
 					target="_blank"
 					rel="noreferrer"
 				>
 					<div className="social-icon">
 						<FontAwesomeIcon
-							icon={faInstagram}
+							icon={faCode}
 							className="social-icon"
 						/>
 					</div>
-					<div className="social-text">Follow on Instagram</div>
+					<div className="social-text">Follow on LeetCode</div>
 				</a>
 			</div>
 

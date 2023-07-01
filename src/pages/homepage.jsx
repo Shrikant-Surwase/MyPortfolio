@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import Typed from "typed.js";
+import { faCode, faMailBulk, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
 	faStackOverflow,
-	faInstagram,
+	
+	faLinkedin,
+	
+	
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
@@ -23,6 +25,7 @@ import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
+
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
@@ -30,6 +33,19 @@ const Homepage = () => {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		var options = {
+			strings: ['<i>Full-Stack Developer</i>',' <i>C++ Programmer</i>','<i>ML Enthusiast</i>'],
+			typeSpeed: 40,
+			loop:true,
+			
+			
+			
+		  };
+		  
+		  var typed = new Typed('.element', options);
+		  return ()=>{
+             typed.destroy();
+		  }
 	}, []);
 
 	useEffect(() => {
@@ -92,11 +108,16 @@ const Homepage = () => {
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
-									{INFO.homepage.title}
+									<div className="font-color">
+									
+									<span className="element"></span>
+									</div>
 								</div>
 
 								<div className="subtitle homepage-subtitle">
+									<div className="font-color-2">
 									{INFO.homepage.description}
+									</div>
 								</div>
 							</div>
 
@@ -115,12 +136,12 @@ const Homepage = () => {
 
 						<div className="homepage-socials">
 							<a
-								href={INFO.socials.twitter}
+								href={INFO.socials.linkedin}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
-									icon={faTwitter}
+									icon={faLinkedin}
 									className="homepage-social-icon"
 								/>
 							</a>
@@ -145,12 +166,12 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
-								href={INFO.socials.instagram}
+								href={INFO.socials.leetcode}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
-									icon={faInstagram}
+									icon={faCode}
 									className="homepage-social-icon"
 								/>
 							</a>

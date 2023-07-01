@@ -8,12 +8,23 @@ import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-
+import Typed from "typed.js";
 import "./styles/projects.css";
 
 const Projects = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		var options = {
+			strings: ['<i>Things I’ve made trying to put my skills in the universe.</i>'],
+			typeSpeed: 40,
+			
+			
+		  };
+		  
+		  var typed = new Typed('.element', options);
+		  return ()=>{
+             typed.destroy();
+		  }
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "projects");
@@ -39,11 +50,10 @@ const Projects = () => {
 					</div>
 					<div className="projects-container">
 						<div className="title projects-title">
-							Things I’ve made trying to put my dent in the
-							universe.
+							<span className="element"></span>
 						</div>
 
-						<div className="subtitle projects-subtitle">
+						<div className="subtitle projects-subtitle demo">
 							I've worked on a variety of projects over the years
 							and I'm proud of the progress I've made. Many of
 							these projects are open-source and available for

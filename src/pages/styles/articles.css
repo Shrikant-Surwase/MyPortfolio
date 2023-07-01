@@ -40,7 +40,12 @@
 	border-left: 2px solid #f4f4f5;
 	width: 100%;
 }
-
+.demo:hover{
+	color: black;
+}
+.element{
+	color: var(--link-color);
+}
 @media (max-width: 1024px) {
 	.articles-title {
 		width: 100% !important;
@@ -48,5 +53,6 @@
 
 	.articles-subtitle {
 		width: 100% !important;
+		
 	}
 }

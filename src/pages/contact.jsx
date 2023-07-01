@@ -5,7 +5,7 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Socials from "../components/about/socials";
-
+import Typed from "typed.js";
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
@@ -14,6 +14,15 @@ import "./styles/contact.css";
 const Contact = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		var options={
+			strings:['<i>Want to Connect with Me: Ways to Connect with Me</i>'],
+			typeSpeed:40,
+		}
+		var typed =new Typed('.element',options);
+
+		return ()=>{
+			typed.destroy();
+		}
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "contact");
@@ -40,10 +49,10 @@ const Contact = () => {
 
 					<div className="contact-container">
 						<div className="title contact-title">
-							Let's Get in Touch: Ways to Connect with Me
+							<span className="element"></span>
 						</div>
 
-						<div className="subtitle contact-subtitle">
+						<div className="subtitle contact-subtitle demo">
 							Thank you for your interest in getting in touch with
 							me. I welcome your feedback, questions, and
 							suggestions. If you have a specific question or
@@ -64,7 +73,7 @@ const Contact = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								{INFO.socials.instagram}
+								{INFO.socials.linkedin}
 							</a>
 							. I post regular updates and engage with my
 							followers there, so don't hesitate to reach out.

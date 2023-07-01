@@ -5,7 +5,7 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Socials from "../components/about/socials";
-
+import Typed from "typed.js";
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
@@ -14,6 +14,19 @@ import "./styles/about.css";
 const About = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		var options = {
+			strings: ['<i>I’m <b>Shrikant Surwase</b> passionate about how the Technology Works on Production Level!!</i>'],
+			typeSpeed: 40,
+			
+			
+		  };
+		  
+		  var typed = new Typed('.element', options);
+		  return ()=>{
+             typed.destroy();
+		  }
+			
+		
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "about");
@@ -42,10 +55,11 @@ const About = () => {
 						<div className="about-main">
 							<div className="about-right-side">
 								<div className="title about-title">
-									{INFO.about.title}
+									
+									<span className="element"></span>
 								</div>
 
-								<div className="subtitle about-subtitle">
+								<div className="subtitle about-subtitle demo">
 									{INFO.about.description}
 								</div>
 							</div>
