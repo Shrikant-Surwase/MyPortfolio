@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Typed from "typed.js";
-import { faCode, faMailBulk, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMailBulk} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
