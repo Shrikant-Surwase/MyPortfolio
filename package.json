@@ -1,5 +1,6 @@
 {   
 	"name": "reactfolio",
+	"homepage": "https://Shrikant-Surwase.github.io/MyPortfolio",
 	"version": "1.1.0",
 	"description": "Personal portfolio template built using Reactjs",
 	"author": {
@@ -29,7 +30,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
