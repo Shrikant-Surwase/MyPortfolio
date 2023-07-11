@@ -59,7 +59,7 @@ const ReadArticle = () => {
 						<div className="read-article-wrapper">
 							<div className="read-article-date-container">
 								<div className="read-article-date">
-									{article().date}
+								{article().date}
 								</div>
 							</div>
 
