@@ -72,3 +72,11 @@
 		font-weight: bold;
 	}
 }
+.dark-mode{
+	margin-left: 20px;
+}
+.dark-btn{
+	border: 1px white;
+	background-color: inherit;
+}
+

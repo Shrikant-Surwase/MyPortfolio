@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga4";
 
@@ -10,16 +10,21 @@ import ReadArticle from "./pages/readArticle";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 
-
+import { ThemeContext } from "./ThemeContext";
 import "./app.css";
 
 
 
 function App() {
-	
+	const [isDark,setDark] = useState(false);
+	const toggle=()=>{
+		setDark(!isDark);
+	}
 
 	return (
-		<div className="App">
+		<ThemeContext.Provider value={{isDark,toggle}}>
+
+<div className="App">
 			<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route path="/about" element={<About />} />
@@ -33,6 +38,7 @@ function App() {
 			
 			</Routes>
 		</div>
+		</ThemeContext.Provider>
 	);
 }
 

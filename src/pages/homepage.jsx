@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Typed from "typed.js";
-import { faCode, faMailBulk} from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMailBulk,faMoon} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
@@ -22,14 +22,16 @@ import AllProjects from "../components/projects/allProjects";
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
-
+import ThemeContext from "../ThemeContext";
 import "./styles/homepage.css";
+import { useContext } from "react";
 
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
+	
 
 	useEffect(() => {
 		window.scrollTo(0, 0);

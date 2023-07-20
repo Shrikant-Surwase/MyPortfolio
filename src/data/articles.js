@@ -27,7 +27,7 @@ function article_1() {
 		body: (
 			<React.Fragment>
 				<div className="article-content">
-					<div className="paragraph">Fist Article i try to write</div>
+					<div className="paragraph">Make mistake</div>
 					<img
 						src="https://picsum.photos/200/300"
 						alt="random"

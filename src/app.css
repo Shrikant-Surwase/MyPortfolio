@@ -22,6 +22,9 @@
 	/* here */
 	position: relative;
 }
+.page-content-dark{
+	background-color: #222;
+}
 
 .page-content:before,
 .page-content:after {

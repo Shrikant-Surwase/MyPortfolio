@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 import "./styles/navBar.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
+
 
 const NavBar = (props) => {
 	const { active } = props;
-
+    const {isDark,toggle} = useContext(ThemeContext);
 	return (
 		<React.Fragment>
 			<div className="nav-container">
@@ -58,6 +62,16 @@ const NavBar = (props) => {
 								<Link to="/contact">Contact</Link>
 							</li>
 						</ul>
+						
+					</div>
+					<div className="dark-mode">
+					 {isDark ? <button className="dark-btn" onClick={toggle}><FontAwesomeIcon
+									icon={faSun}
+									className="homepage-social-icon"
+								/></button>: <button className="dark-btn" onClick={toggle}><FontAwesomeIcon
+								icon={faMoon}
+								className="homepage-social-icon"
+							/></button>}
 					</div>
 				</nav>
 			</div>
