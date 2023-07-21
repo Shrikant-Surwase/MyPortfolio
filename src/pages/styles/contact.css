@@ -26,6 +26,9 @@
 .demo:hover{
 	color: black;
 }
+.demo1{
+	color: white;
+}
 
 .socials-container {
 	display: flex;

@@ -16,28 +16,28 @@ import "./app.css";
 
 
 function App() {
-	const [isDark,setDark] = useState(false);
-	const toggle=()=>{
+	const [isDark, setDark] = useState(false);
+	const toggle = () => {
 		setDark(!isDark);
 	}
 
 	return (
-		<ThemeContext.Provider value={{isDark,toggle}}>
+		<ThemeContext.Provider value={{ isDark, toggle }}>
 
-<div className="App">
-			<Routes>
-				<Route path="/" element={<Homepage />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/projects" element={<Projects />} />
-				<Route path="/articles" element={<Articles />} />
-				<Route path="/article/:slug" element={<ReadArticle />} />
-				<Route path="/contact" element={<Contact />} />
-			
-				<Route path="*" element={<Notfound />} />
-				
-			
-			</Routes>
-		</div>
+			<div className="App">
+				<Routes>
+					<Route path="/" element={<Homepage />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/projects" element={<Projects />} />
+					<Route path="/articles" element={<Articles />} />
+					<Route path="/article/:slug" element={<ReadArticle />} />
+					<Route path="/contact" element={<Contact />} />
+
+					<Route path="*" element={<Notfound />} />
+
+
+				</Routes>
+			</div>
 		</ThemeContext.Provider>
 	);
 }

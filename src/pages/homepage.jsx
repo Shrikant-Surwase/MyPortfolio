@@ -22,9 +22,11 @@ import AllProjects from "../components/projects/allProjects";
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
-import ThemeContext from "../ThemeContext";
+
 import "./styles/homepage.css";
 import { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
+
 
 
 const Homepage = () => {
@@ -85,7 +87,7 @@ const Homepage = () => {
 		borderRadius: stayLogo ? "50%" : "none",
 		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
 	};
-
+  const {isDark} = useContext(ThemeContext);
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -97,7 +99,7 @@ const Homepage = () => {
 				/>
 			</Helmet>
 
-			<div className="page-content">
+			<div className={`${isDark ? "page-content-dark":'page-content'}`}>
 				<NavBar active="home" />
 				<div className="content-wrapper">
 					<div className="homepage-logo-container">
@@ -117,7 +119,7 @@ const Homepage = () => {
 								</div>
 
 								<div className="subtitle homepage-subtitle">
-									<div className="font-color-2">
+									<div className={`${isDark ? 'font-color-21':'font-color-2'}`}>
 									{INFO.homepage.description}
 									</div>
 								</div>

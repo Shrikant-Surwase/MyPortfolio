@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -10,6 +10,7 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/contact.css";
+import { ThemeContext } from "../ThemeContext";
 
 const Contact = () => {
 	useEffect(() => {
@@ -26,7 +27,7 @@ const Contact = () => {
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "contact");
-
+    const {isDark} = useContext(ThemeContext)
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -38,7 +39,7 @@ const Contact = () => {
 				/>
 			</Helmet>
 
-			<div className="page-content">
+			<div className={`${isDark ? 'page-content-dark':'page-content'}`}>
 				<NavBar active="contact" />
 				<div className="content-wrapper">
 					<div className="contact-logo-container">
@@ -52,13 +53,13 @@ const Contact = () => {
 							<span className="element"></span>
 						</div>
 
-						<div className="subtitle contact-subtitle demo">
+						<div className={`${isDark ? "subtitle projects-subtitle demo1":"subtitle projects-subtitle demo"}`}>
 							Thank you for your interest in getting in touch with
 							me. I welcome your feedback, questions, and
 							suggestions. If you have a specific question or
 							comment, please feel free to email me directly at
 							&nbsp;{" "}
-							<a href={`mailto:${INFO.main.email}`}>
+							<a  href={`mailto:${INFO.main.email}`}>
 								{INFO.main.email}
 							</a>
 							. I make an effort to respond to all messages within

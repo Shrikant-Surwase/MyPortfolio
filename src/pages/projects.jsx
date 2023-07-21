@@ -10,6 +10,8 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 import Typed from "typed.js";
 import "./styles/projects.css";
+import { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 
 const Projects = () => {
 	useEffect(() => {
@@ -28,7 +30,7 @@ const Projects = () => {
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "projects");
-
+   const {isDark} = useContext(ThemeContext);
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -40,7 +42,7 @@ const Projects = () => {
 				/>
 			</Helmet>
 
-			<div className="page-content">
+			<div className={`${isDark ? 'page-content-dark':'page-content'}`}>
 				<NavBar active="projects" />
 				<div className="content-wrapper">
 					<div className="projects-logo-container">
@@ -53,7 +55,7 @@ const Projects = () => {
 							<span className="element"></span>
 						</div>
 
-						<div className="subtitle projects-subtitle demo">
+						<div className={`${isDark ? "subtitle projects-subtitle demo1":"subtitle projects-subtitle demo"}`}>
 							I've worked on a variety of projects over the years
 							and I'm proud of the progress I've made. Many of
 							these projects are open-source and available for

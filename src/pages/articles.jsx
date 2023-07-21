@@ -11,6 +11,8 @@ import SEO from "../data/seo";
 import myArticles from "../data/articles";
 
 import "./styles/articles.css";
+import { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 
 const Articles = () => {
 	useEffect(() => {
@@ -30,7 +32,7 @@ const Articles = () => {
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "articles");
-
+  const {isDark} = useContext(ThemeContext)
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -42,7 +44,7 @@ const Articles = () => {
 				/>
 			</Helmet>
 
-			<div className="page-content">
+			<div className={`${isDark ? 'page-content-dark':'page-content'}`}>
 				<NavBar active="articles" />
 				<div className="content-wrapper">
 					<div className="articles-logo-container">
@@ -57,7 +59,7 @@ const Articles = () => {
 							<span className="element"></span>
 						</div>
 
-						<div className="subtitle articles-subtitle demo">
+						<div className={`${isDark ? "subtitle articles-subtitle demo1":"subtitle articles-subtitle demo"}`}>
 							{INFO.articles.description}
 						</div>
 

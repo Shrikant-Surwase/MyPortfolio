@@ -16,6 +16,9 @@
 .demo:hover{
 	color: black;
 }
+.demo1{
+	color: white;
+}
 .projects-container {
 	display: flex;
 	flex-direction: column;

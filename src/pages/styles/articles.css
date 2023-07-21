@@ -43,6 +43,9 @@
 .demo:hover{
 	color: black;
 }
+.demo1{
+	color: white;
+}
 .element{
 	color: var(--link-color);
 }
